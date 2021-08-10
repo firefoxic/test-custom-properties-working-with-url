@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html class="page" lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Path resolving test in values ​​with custom property</title>
+	<link rel="stylesheet" href="./a/style.css">
+	<link rel="stylesheet" href="./b/style.css">
+</head>
+
+<body class="page__body">
+	<main class="page__content">
+		<h1 class="heading">Path resolving test in values ​​with custom property</h1>
+		<table>
+			<thead>
+				<tr>
+					<td></td>
+					<th scope="col">Inside</th>
+					<th scope="col">Beside</th>
+					<th scope="col">Outside</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<th scope="row">Shorthand</th>
+					<td>
+						<div class="test test--bg_shorthand test--url_inside"></div>
+					</td>
+					<td>
+						<div class="test test--bg_shorthand test--url_beside"></div>
+					</td>
+					<td>
+						<div class="test test--bg_shorthand test--url_outside"></div>
+					</td>
+				</tr>
+				<tr>
+					<th scope="row">Longhand</th>
+					<td>
+						<div class="test test--bg_longhand test--url_inside"></div>
+					</td>
+					<td></td>
+					<td>
+						<div class="test test--bg_longhand test--url_outside"></div>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</main>
+</body>
+
+</html>
