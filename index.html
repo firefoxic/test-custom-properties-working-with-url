@@ -70,16 +70,16 @@
 ├── foo.svg
 └── index.html</code></pre>
 		<p>
-			The custom property <code>--my-image: url("./foo.svg");</code> is declared in “/a/style.css”. And it is used in “/b/style.css”.
+			The custom property <code>--my-image: url("./foo.svg");</code> is declared in <a href="./a/style.css">/a/style.css</a>. And it is used in <a href="./b/style.css">/b/style.css</a>.
 		</p>
-		According to a note in the specification, the final path to the image should be “/b/foo.svg”, so there is a picture with the inscription “Success!”
+		According to a note in the specification, the final path to the image should be <a href="./b/foo.svg">/b/foo.svg</a>, so there is a picture with the inscription “Success!”
 		<p>
 		</p>
 		<p>
-			If the path becomes “/a/foo.svg”, means that it was resolved relative to the file in which the custom property was set, which is incorrect and the picture will show the inscription “Wrong folder”.
+			If the path becomes <a href="./a/foo.svg">/a/foo.svg</a>, means that it was resolved relative to the file in which the custom property was set, which is incorrect and the picture will show the inscription “Wrong folder”.
 		</p>
 		<p>
-			And if the path is built from the markup file (or for some other reason) and resolves to “/foo.svg”, then we will see the inscription “Fail :(”.
+			And if the path is built from the markup file (or for some other reason) and resolves to <a href="./foo.svg">/foo.svg</a>, then we will see the inscription “Fail :(”.
 		</p>
 		<p>
 			But that’s not all! It turns out that incorrect behavior is possible not only if <code>url()</code> is located <em>inside</em> a custom property <code>background: var(--my-image);</code>, but also <em>beside</em> it in the shorthand <code>background: url("./foo.svg") var(--my-color);</code> (for which the WebKit had a separate <a href="https://bugs.webkit.org/show_bug.cgi?id=198512">bug</a>, but it has already been fixed), and even <em>outside</em> the current part of the multiple value <code>background: url("./foo.svg"), linear-gradient(var(--my-color), var(--my-color));</code>. Moreover, in these cases, the custom property has nothing to do with the path to the image, it can contain just a color value.
