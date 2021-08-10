@@ -12,3 +12,36 @@
 	margin: 0;
 	padding: 16px;
 }
+
+.test {
+	--my-color: hsl(250deg 66% 58%);
+
+	inline-size: 200px;
+	block-size: 200px;
+	border-radius: 100%;
+	box-shadow: inset 0px 0px 10px hsl(0deg 0% 0% / 0.3);
+}
+
+.test--bg_shorthand.test--url_inside {
+	background: var(--my-image);
+}
+
+.test--bg_shorthand.test--url_beside {
+	background: url("./foo.svg") var(--my-color);
+}
+
+.test--bg_shorthand.test--url_outside {
+	background:
+		url("./foo.svg"),
+		linear-gradient(var(--my-color), var(--my-color));
+}
+
+.test--bg_longhand.test--url_inside {
+	background-image: var(--my-image);
+}
+
+.test--bg_longhand.test--url_outside {
+	background-image:
+		url("./foo.svg"),
+		linear-gradient(var(--my-color), var(--my-color));
+}
