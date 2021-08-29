@@ -95,49 +95,55 @@
 		</p>
 		<h2>Results</h2>
 		<table>
-			<caption>Test results as of 10 Aug 2021</caption>
+			<caption>Test results (as of 29 Aug 2021)</caption>
 			<thead>
 				<tr>
 					<td></td>
 					<th scope="col">Firefox</th>
 					<th scope="col">Chrome</th>
-					<th scope="col">Safari</th>
+					<th scope="col">Safari ≤ 14.0</th>
+					<th scope="col">Safari ≥ 14.1</th>
 					<th scope="col">Epiphany</th>
 				</tr>
 			</thead>
 			<tbody>
 				<tr>
-					<th scope="row">Fedora Linux</th>
-					<td><a href="./results/2021/08/10/firefox-linux.webp">Complete success</a></td>
-					<td><a href="./results/2021/08/10/chrome-linux.webp">Complete success</a></td>
+					<th scope="row">Linux</th>
+					<td><a href="./results/2021/08/29/firefox-linux.webp">Complete success</a></td>
+					<td><a href="./results/2021/08/29/chrome-linux.webp">Complete success</a></td>
 					<td>n/a</td>
-					<td><a href="./results/2021/08/10/epiphany.webp">Partial failure</a></td>
+					<td>n/a</td>
+					<td><a href="./results/2021/08/29/epiphany.webp">Partial failure</a></td>
 				</tr>
 				<tr>
-					<th scope="row">Windows 10</th>
-					<td><a href="./results/2021/08/10/firefox-windows.webp">Complete success</a></td>
-					<td><a href="./results/2021/08/10/chrome-windows.webp">Complete success</a></td>
+					<th scope="row">Windows</th>
+					<td><a href="./results/2021/08/29/firefox-windows.webp">Complete success</a></td>
+					<td><a href="./results/2021/08/29/chrome-windows.webp">Complete success</a></td>
+					<td>n/a</td>
 					<td>n/a</td>
 					<td>n/a</td>
 				</tr>
 				<tr>
 					<th scope="row">macOS</th>
-					<td><a href="./results/2021/08/10/firefox-macos.png">Complete success</a></td>
-					<td><a href="./results/2021/08/10/chrome-macos.webp">Complete success</a></td>
-					<td><a href="./results/2021/08/10/safari-macos.webp">Partial failure</a></td>
+					<td><a href="./results/2021/08/29/firefox-macos.png">Complete success</a></td>
+					<td><a href="./results/2021/08/29/chrome-macos.webp">Complete success</a></td>
+					<td><a href="./results/2021/08/29/safari13.1-macos.webp">Complete failure</a></td>
+					<td><a href="./results/2021/08/29/safari14.1-macos.webp">Partial failure</a></td>
 					<td>n/a</td>
 				</tr>
 				<tr>
-					<th scope="row">iPhone 12</th>
+					<th scope="row">iOS</th>
 					<td><a>Complete failure</a></td>
 					<td><a>Complete failure</a></td>
-					<td><a href="./results/2021/08/10/safari-ios.webp">Complete failure</a></td>
+					<td><a href="./results/2021/08/29/safari14.0-ios.webp">Complete failure</a></td>
+					<td><a href="./results/2021/08/29/safari14.6-ios.webp">Partial failure</a></td>
 					<td>n/a</td>
 				</tr>
 				<tr>
-					<th scope="row">Samsung S21</th>
-					<td><a href="./results/2021/08/10/firefox-android.webp">Complete success</a></td>
-					<td><a href="./results/2021/08/10/chrome-android.webp">Complete success</a></td>
+					<th scope="row">Android</th>
+					<td><a href="./results/2021/08/29/firefox-android.webp">Complete success</a></td>
+					<td><a href="./results/2021/08/29/chrome-android.webp">Complete success</a></td>
+					<td>n/a</td>
 					<td>n/a</td>
 					<td>n/a</td>
 				</tr>
@@ -145,7 +151,7 @@
 		</table>
 		<p>In both cases, called <em>Partial failure</em>, the result is the following:</p>
 		<p>
-			<img src="./results/partial-failure.webp" alt="Failed only longhand cases" width="766" height="493">
+			<img src="./results/partial-failure.webp" alt="Failed only longhand cases" width="452" height="269">
 		</p>
 	</main>
 	<footer>Developed by Sergey Artemov aka @firefoxic</footer>
