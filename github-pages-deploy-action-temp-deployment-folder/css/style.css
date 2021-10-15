@@ -1,0 +1,14 @@
+.page {
+	display: grid;
+	min-block-size: 100%;
+	font-size: 20px;
+	line-height: 1.6;
+}
+
+.page__body {
+	box-sizing: border-box;
+	display: grid;
+	min-block-size: 100%;
+	margin: 0;
+	padding: 16px;
+}
