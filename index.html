@@ -4,7 +4,7 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Path resolving test in values ​​with custom property</title>
+	<title>Path resolving test in values ​​with custom property</title>
 	<link rel="shortcut icon" href="./foo.svg" type="image/svg+xml">
 	<link rel="stylesheet" href="./css/style.css">
 	<link rel="stylesheet" href="./a/style.css">
@@ -13,41 +13,43 @@
 
 <body class="page__body">
 	<main class="page__content">
-		<h1 class="heading">Path resolving test in values ​​with custom property</h1>
-		<table>
-			<thead>
-				<tr>
-					<td></td>
-					<th scope="col">Inside</th>
-					<th scope="col">Beside</th>
-					<th scope="col">Outside</th>
-				</tr>
-			</thead>
-			<tbody>
-				<tr>
-					<th scope="row">Shorthand</th>
-					<td>
-						<div class="test test--bg_shorthand test--url_inside"></div>
-					</td>
-					<td>
-						<div class="test test--bg_shorthand test--url_beside"></div>
-					</td>
-					<td>
-						<div class="test test--bg_shorthand test--url_outside"></div>
-					</td>
-				</tr>
-				<tr>
-					<th scope="row">Longhand</th>
-					<td>
-						<div class="test test--bg_longhand test--url_inside"></div>
-					</td>
-					<td></td>
-					<td>
-						<div class="test test--bg_longhand test--url_outside"></div>
-					</td>
-				</tr>
-			</tbody>
-		</table>
+		<h1 class="heading">Path resolving test in values ​​with custom property</h1>
+		<figure>
+			<table>
+				<thead>
+					<tr>
+						<td></td>
+						<th scope="col">Inside</th>
+						<th scope="col">Beside</th>
+						<th scope="col">Outside</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<th scope="row">Shorthand</th>
+						<td>
+							<div class="test test--bg_shorthand test--url_inside"></div>
+						</td>
+						<td>
+							<div class="test test--bg_shorthand test--url_beside"></div>
+						</td>
+						<td>
+							<div class="test test--bg_shorthand test--url_outside"></div>
+						</td>
+					</tr>
+					<tr>
+						<th scope="row">Longhand</th>
+						<td>
+							<div class="test test--bg_longhand test--url_inside"></div>
+						</td>
+						<td></td>
+						<td>
+							<div class="test test--bg_longhand test--url_outside"></div>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		</figure>
 		<h2>Test description</h2>
 		<p>
 			This test was designed to test a fix for a specific <a href="https://bugs.webkit.org/show_bug.cgi?id=200092">bug</a> in WebKit. And also to clarify the correspondence of how other browser engines resolve paths in <code>url()</code> in all possible scenarios, as described in the specification.
@@ -83,9 +85,9 @@
 		</p>
 		<p><img src="./a/foo.svg" alt="Wrong folder" width="100" height="100"></p>
 		<p>
-			And if the path is built from the markup file (or for some other reason) and resolves to <a href="./foo.svg">/foo.svg</a>, then we will see the inscription “Fail :(”.
+			And if the path is built from the markup file (or for some other reason) and resolves to <a href="./foo.svg">/foo.svg</a>, then we will see the inscription “Fail”.
 		</p>
-		<p><img src="./foo.svg" alt="Fail :(" width="100" height="100"></p>
+		<p><img src="./foo.svg" alt="Fail" width="100" height="100"></p>
 		<p>
 			But that’s not all! It turns out that incorrect behavior is possible not only if <code>url()</code> is located <em>inside</em> a custom property <code>background: var(--my-image);</code>, but also <em>beside</em> it in the shorthand <code>background: url("./foo.svg") var(--my-color);</code> (for which the WebKit had a separate <a href="https://bugs.webkit.org/show_bug.cgi?id=198512">bug</a>, but it has already been fixed), and even <em>outside</em> the current part of the multiple value <code>background: url("./foo.svg"), linear-gradient(var(--my-color), var(--my-color));</code>. Moreover, in these cases, the custom property has nothing to do with the path to the image, it can contain just a color value.
 		</p>
@@ -96,65 +98,67 @@
 			All of these options are processed by this test. If I am missing something, please <a href="https://github.com/firefoxic/test-custom-properties-working-with-url/issues">let me know</a> or send a <a href="https://github.com/firefoxic/test-custom-properties-working-with-url/pulls">pull request</a>.
 		</p>
 		<h2>Results</h2>
-		<table>
-			<caption>Test results (as of 29 Aug 2021)</caption>
-			<thead>
-				<tr>
-					<td></td>
-					<th scope="col">Firefox</th>
-					<th scope="col">Chrome</th>
-					<th scope="col">Safari ≤ 14.0</th>
-					<th scope="col">Safari ≥ 14.1</th>
-					<th scope="col">Epiphany</th>
-				</tr>
-			</thead>
-			<tbody>
-				<tr>
-					<th scope="row">Linux</th>
-					<td><a href="./results/2021/08/29/firefox-linux.webp">Complete success</a></td>
-					<td><a href="./results/2021/08/29/chrome-linux.webp">Complete success</a></td>
-					<td>n/a</td>
-					<td>n/a</td>
-					<td><a href="./results/2021/08/29/epiphany.webp">Partial failure</a></td>
-				</tr>
-				<tr>
-					<th scope="row">Windows</th>
-					<td><a href="./results/2021/08/29/firefox-windows.webp">Complete success</a></td>
-					<td><a href="./results/2021/08/29/chrome-windows.webp">Complete success</a></td>
-					<td>n/a</td>
-					<td>n/a</td>
-					<td>n/a</td>
-				</tr>
-				<tr>
-					<th scope="row">macOS</th>
-					<td><a href="./results/2021/08/29/firefox-macos.webp">Complete success</a></td>
-					<td><a href="./results/2021/08/29/chrome-macos.webp">Complete success</a></td>
-					<td><a href="./results/2021/08/29/safari13.1-macos.webp">Complete failure</a></td>
-					<td><a href="./results/2021/08/29/safari14.1-macos.webp">Partial failure</a></td>
-					<td>n/a</td>
-				</tr>
-				<tr>
-					<th scope="row">iOS</th>
-					<td><a>Depends on safari</a></td>
-					<td><a>Depends on safari</a></td>
-					<td><a href="./results/2021/08/29/safari14.0-ios.webp">Complete failure</a></td>
-					<td><a href="./results/2021/08/29/safari14.6-ios.webp">Partial failure</a></td>
-					<td>n/a</td>
-				</tr>
-				<tr>
-					<th scope="row">Android</th>
-					<td><a href="./results/2021/08/29/firefox-android.webp">Complete success</a></td>
-					<td><a href="./results/2021/08/29/chrome-android.webp">Complete success</a></td>
-					<td>n/a</td>
-					<td>n/a</td>
-					<td>n/a</td>
-				</tr>
-			</tbody>
-		</table>
-		<p>In all cases, called <em>Partial failure</em>, the result is the following:</p>
-		<p>
+		<figure>
+			<figcaption>Test results (as of 29 Aug 2021)</figcaption>
+			<table>
+				<thead>
+					<tr>
+						<td></td>
+						<th scope="col">Firefox</th>
+						<th scope="col">Chrome</th>
+						<th scope="col">Safari ≤ 14.0</th>
+						<th scope="col">Safari ≥ 14.1</th>
+						<th scope="col">Epiphany</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<th scope="row">Linux</th>
+						<td><a href="./results/2021/08/29/firefox-linux.webp">Complete success</a></td>
+						<td><a href="./results/2021/08/29/chrome-linux.webp">Complete success</a></td>
+						<td>n/a</td>
+						<td>n/a</td>
+						<td><a href="./results/2021/08/29/epiphany.webp">Partial failure</a></td>
+					</tr>
+					<tr>
+						<th scope="row">Windows</th>
+						<td><a href="./results/2021/08/29/firefox-windows.webp">Complete success</a></td>
+						<td><a href="./results/2021/08/29/chrome-windows.webp">Complete success</a></td>
+						<td>n/a</td>
+						<td>n/a</td>
+						<td>n/a</td>
+					</tr>
+					<tr>
+						<th scope="row">macOS</th>
+						<td><a href="./results/2021/08/29/firefox-macos.webp">Complete success</a></td>
+						<td><a href="./results/2021/08/29/chrome-macos.webp">Complete success</a></td>
+						<td><a href="./results/2021/08/29/safari13.1-macos.webp">Complete failure</a></td>
+						<td><a href="./results/2021/08/29/safari14.1-macos.webp">Partial failure</a></td>
+						<td>n/a</td>
+					</tr>
+					<tr>
+						<th scope="row">iOS</th>
+						<td><a>Depends on safari</a></td>
+						<td><a>Depends on safari</a></td>
+						<td><a href="./results/2021/08/29/safari14.0-ios.webp">Complete failure</a></td>
+						<td><a href="./results/2021/08/29/safari14.6-ios.webp">Partial failure</a></td>
+						<td>n/a</td>
+					</tr>
+					<tr>
+						<th scope="row">Android</th>
+						<td><a href="./results/2021/08/29/firefox-android.webp">Complete success</a></td>
+						<td><a href="./results/2021/08/29/chrome-android.webp">Complete success</a></td>
+						<td>n/a</td>
+						<td>n/a</td>
+						<td>n/a</td>
+					</tr>
+				</tbody>
+			</table>
+		</figure>
+		<p>In all cases, called <em>Partial failure</em>, the result is the following:</p>
+		<figure>
 			<img src="./results/partial-failure.webp" alt="Failed only longhand cases" width="452" height="269">
-		</p>
+		</figure>
 	</main>
 	<footer>Developed by Sergey Artemov aka @firefoxic</footer>
 </body>
