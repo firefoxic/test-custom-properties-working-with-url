@@ -15,7 +15,8 @@
 .page__content {
 	box-sizing: border-box;
 	margin: auto;
-	inline-size: min(56ch, 100%);
+	inline-size: 100%;
+	max-inline-size: 56ch;
 }
 
 figure {
